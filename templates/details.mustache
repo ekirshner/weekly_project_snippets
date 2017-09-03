@@ -1,26 +1,23 @@
 <!doctype html>
 <html>
-<head>
-    <title>Details</title>
-    <link rel="stylesheet" href="/styles.css">
-    <style>@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,800,800i');</style>
-</head>
+    <head>
+        <title>Details</title>
+        <link rel="stylesheet" href="/styles.css">
+        <style>@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,800,800i');</style>
+    </head>
 
-<body>
-    <h2><a href="/home">Back to Search Results</a></h2>
+    <body>
+        <h2><a href="/home">Back to Search Results</a></h2>
 
-    <div id="details">
-    {{ #snippet }}
-        <p><span>{{ name }}<span></p>
-        <p>{{ body }}</p>
-        <p>Language: <span>{{ language }}</span></p>
-        <p>Notes: <span>{{ notes }}</span></p>
-        {{ #tags }}
-            <p>Tags: <span>{{ . }}</span></p>
-        {{ /tags }}
-    {{ /snippet }}
-    </div>
+        <div id="details">
+        {{ #snippet }}
+            <p><span>{{ name }}<span></p>
+            <p>{{ body }}</p>
+            <p>Language: <span>{{ language }}</span></p>
+            <p>Notes: <span>{{ notes }}</span></p>
+            <p>Tags: {{ #tags }} <span>{{ . }}</span> {{ /tags }} </p>
+        {{ /snippet }}
+        </div>
         
-    
-</body>
+    </body>
 </html>

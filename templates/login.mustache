@@ -1,30 +1,30 @@
 <!doctype html>
 <html>
-<head>
-    <title>Login</title>
-    <link rel="stylesheet" href="/styles.css">
-    <style>@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,800,800i');</style>
-</head>
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="/styles.css">
+        <style>@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,800,800i');</style>
+    </head>
 
-<body>
-    <div id="login-page">
-        <h1> Please Sign In </h1>
+    <body>
+        <div id="login-page">
+            <h1> Please Sign In </h1>
 
-        <form method="post" action="/loginVerification">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" required>
+            <form method="post" action="/loginVerification">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
 
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
 
-            <input type="submit" value="Sign In">
+                <input type="submit" value="Sign In">
+            </form>
+        </div>
+
+        <form method="get" action="/registration">
+            <label for="reg">New user?</label>
+            <input type="submit" value="Register Here" name="reg">
         </form>
-    </div>
-
-    <form method="get" action="/registration">
-        <label for="reg">New user?</label>
-        <input type="submit" value="Register Here" name="reg">
-    </form>
-    
-</body>
+        
+    </body>
 </html>

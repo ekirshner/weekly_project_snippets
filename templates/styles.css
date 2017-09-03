@@ -3,6 +3,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     background-attachment: fixed;
+    margin-left: 2%;
 }
 
 #login-page {
@@ -11,7 +12,8 @@ body {
 }
 
 h1 {
-    font-size: 50px;
+    font-size: 50px; 
+    text-shadow: 1px 4px 1px skyblue;
 }
 
 h3 {
@@ -32,10 +34,6 @@ label {
     height: 15px;
 }
 
-#name {
-    width: 400px;
-}
-
 #newSnippet {
     height: 150px;
 }
@@ -52,12 +50,12 @@ select {
     display: flex; 
     flex-wrap: wrap; 
     width: 50%;
-    flex-direction: column;
+    flex-direction: column; 
 }
 
 #snippet-section {
-    margin: 3%;
-    padding: 3%;
+    margin-top: 3%; 
+    padding: 3% 0;
     border-top: 2px solid skyblue;
     text-align: left;
 }
@@ -97,8 +95,7 @@ span {
     margin-left: 5%;
 }
 
-#details p:first-of-type,
-#details p:nth-child(2) {
+#details p:first-of-type {
     text-align: center;
     font-weight: bold;
 }

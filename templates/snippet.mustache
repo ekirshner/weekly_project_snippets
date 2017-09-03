@@ -1,54 +1,53 @@
 <!doctype html>
 <html>
-<head>
-    <title>Login</title>
-    <link rel="stylesheet" href="/styles.css">
-    <style>@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,800,800i');</style>
-</head>
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="/styles.css">
+        <style>@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,800,800i');</style>
+    </head>
 
-<body>
-    <h1>Master Page of Snippets</h1>
-    
-    <form method="post" action="/add" id="addForm">
-        <h3>Add a Snippet</h3>
-        <input type="text" name="name" id="name" placeholder="Enter Snippet Name..">
-        <textarea name="newSnippet" id="newSnippet" form="addForm" placeholder="Type or paste snippet here"></textarea>
-        <textarea name="notes" id="notes" form="addForm" placeholder="Enter Notes (Optional)"></textarea>
-        <select name="language" form="addForm">
-            <option value="Java">Java</option>
-            <option value="Javascript">Javascript</option>
-            <option value="CSS">CSS</option>
-            <option value="HTML">HTML</option>
-        </select>
-         <textarea name="newTag" id="newTag" form="addForm" placeholder="Enter tags separated by commas"></textarea>
-        <input type="submit" value="Add Snippet">
-    </form>
-
-    <section id="snippet-section">
-        <form method="post" action="/search" name="search" id="search">
-            <label for="searchValue">Search by:</label>
-            <select name="searchValue" form="search">
-                <option value="tags">Tag</option>
-                <option value="language">Language</option>
-                <option value="name">Name</option>
+    <body>
+        <h1>Master Page of Snippets</h1>
+        
+        <form method="post" action="/add" id="addForm">
+            <h3>Add a Snippet</h3>
+            <input type="text" name="name" id="name" placeholder="Enter Snippet Name..">
+            <textarea name="newSnippet" id="newSnippet" form="addForm" placeholder="Type or paste snippet here"></textarea>
+            <textarea name="notes" id="notes" form="addForm" placeholder="Enter Notes (Optional)"></textarea>
+            <textarea name="newTag" id="newTag" form="addForm" placeholder="Enter tags separated by commas"></textarea>
+            <select name="language" form="addForm">
+                <option value="Java">Java</option>
+                <option value="Javascript">Javascript</option>
+                <option value="CSS">CSS</option>
+                <option value="HTML">HTML</option>
             </select>
-            <input type="text" name="searchbox" placeholder="Search..">
-            <input type="submit" value="Search">
+            <input type="submit" value="Add Snippet">
         </form>
-        <a href="/home">View All Snippets</a>
-    </section>
 
-    <section id="theSnippets">
-        {{ #snippet }}
-            <div> 
-                <p id="nametag"><a href="/details/{{id}}"> <span>{{ name }}</span></a></p>
-                <!-- <p>{{ body }}</p> -->
-                <p>Language: <span>{{ language }}</span></p>
-                <p>Notes: <span>{{ notes }}</span></p>
-                <p>Tags: <span>{{ #tags }}  {{ . }}  {{ /tags }}</span></p>
-            </div>
-        {{ /snippet }}
-    </section>
+        <section id="snippet-section">
+            <form method="post" action="/search" name="search" id="search">
+                <label for="searchValue">Search by:</label>
+                <select name="searchValue" form="search">
+                    <option value="tags">Tag</option>
+                    <option value="language">Language</option>
+                    <option value="name">Name</option>
+                </select>
+                <input type="text" name="searchbox" placeholder="Search..">
+                <input type="submit" value="Search">
+            </form>
+            <a href="/home">View All Snippets</a>
+        </section>
 
-</body>
+        <section id="theSnippets">
+            {{ #snippet }}
+                <div> 
+                    <p id="nametag"><a href="/details/{{id}}"> <span>{{ name }}</span></a></p>
+                    <p>Language: <span>{{ language }}</span></p>
+                    <p>Notes: <span>{{ notes }}</span></p>
+                    <p>Tags: <span>{{ #tags }}  {{ . }}  {{ /tags }}</span></p>
+                </div>
+            {{ /snippet }}
+        </section>
+
+    </body>
 </html>
